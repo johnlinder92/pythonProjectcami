@@ -1,34 +1,55 @@
-import sys
+from Carros import Carros
+from Comida import Comida
+
+cars = []
+foods = []
+basket = []
+
+
+def administergoods(choice):
+
+    if choice == "1":
+        car = Carros(input("Choose a price of this car:"),input("Choose a color of this car:"))
+        cars.append(car)
+    elif choice == "2":
+        food = Comida(input("Choose a price of this food:"), input("Choose a description of this food:"))
+        foods.append(food)
+    elif choice == "3":
+        for car in cars:
+            print(car.precio, car.color)
+        for food in foods:
+            print(food.precio, food.description)
+
+
+def store():
+    print("store")
+def viewGoods():
+    print("viewgoods")
+
+def selection(choice):
+   if choice == "1":
+       administergoods(input("Choose 1 to create a car, 2 to create food, 3 to print: "))
+   elif choice == "2":
+       store()
+   elif choice == "3":
+       viewGoods()
+   elif choice == "4":
+       f = open("store.txt", "w")
+       f.write(cars)
+       f.close()
+   else:
+       print("wrong input, try again!")
+
+def myfunc(n):
+    return lambda a: a * n
+
+
+
+
+
 
 if __name__ == '__main__':
-    counter = 0
-    for line in sys.stdin:
-        counter += 1
-        ab = line.split()
-        itemsCount = len(ab)
-        finalExpression = []
-        nextCounter = 0
-        for index in range(len(ab)):
-            if (index == nextCounter):
+ exitprogram = False
+ while exitprogram == False:
+    selection(input("Select 1 to administer available goods, 2 to go to store, 3 to see what goods you purchased:"))
 
-                item = ab[index]
-                if item in ['+', '-', '*'] and index <= (itemsCount - 3):
-                    if ab[index + 1].isnumeric() and ab[index + 2].isnumeric() and int(ab[index + 1]) in range(-10, 10) and int(ab[index + 2]) in range(-10, 10):
-                        result = 0
-                        if (item == '+'):
-                            result = int(ab[index + 1]) + int(ab[index + 2])
-                        elif (item == '-'):
-                            result = int(ab[index + 1]) - int(ab[index + 2])
-                        else:
-                            result = int(ab[index + 1]) * int(ab[index + 2])
-
-                        finalExpression.append(result)
-                        nextCounter += 3
-                    else:
-                        finalExpression.append(item)
-                        nextCounter += 1
-                else:
-                    finalExpression.append(item)
-                    nextCounter += 1
-
-        print("Case " + str(counter) + ": " + ' '.join(map(str, finalExpression)))
