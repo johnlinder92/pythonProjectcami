@@ -45,11 +45,49 @@ def myfunc(n):
 
 
 
+'''exitprogram = False
+ while exitprogram == False:
+    selection(input("Select 1 to administer available goods, 2 to go to store, 3 to see what goods you purchased:"))'''
+
+def capital_indexes(inputstring):
+    list= []
+    x = -1
+    for i in inputstring:
+        x += 1
+        if inputstring[x].isupper():
+            list.append(x)
+    return list
+
+def mid(inputstring):
+    x = 0
+    for i in inputstring:
+
+        x += 1
+        if float(x) == (((len(inputstring))/2)+0.5):
+            mid = inputstring[x-1]
+            return mid
+    else:
+        return ""
+
+def double_letters(string):
+    x = 1
+    for i in string:
+      try:
+       if i == string[x]:
+           return True
+       x += 1
+      except:
+       return False
+    return False
+
+
+
+
+
 
 
 
 if __name__ == '__main__':
- exitprogram = False
- while exitprogram == False:
-    selection(input("Select 1 to administer available goods, 2 to go to store, 3 to see what goods you purchased:"))
+    test= ""
+    print(double_letters(test))
 
