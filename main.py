@@ -45,9 +45,28 @@ def myfunc(n):
 
 
 
-'''exitprogram = False
- while exitprogram == False:
-    selection(input("Select 1 to administer available goods, 2 to go to store, 3 to see what goods you purchased:"))'''
+def online_count(statuses):
+    p = 0
+    list = statuses.values()
+    for x in list:
+        if x == 'online':
+            p += 1
+    return p
+
+
+def remove_dots(string):
+    string2 = ""
+    slist = list(string)
+    count = 0
+    for y in slist:
+        if (y == "."):
+            del(slist[count])
+        count += 1
+
+    for ele in slist:
+        string2 += ele
+
+    return string2
 
 def capital_indexes(inputstring):
     list= []
@@ -83,11 +102,8 @@ def double_letters(string):
 
 
 
-
-
-
-
 if __name__ == '__main__':
-    test= ""
-    print(double_letters(test))
+ exitprogram = False
+ while exitprogram == False:
+    selection(input("Select 1 to administer available goods, 2 to go to store, 3 to see what goods you purchased:"))
 
