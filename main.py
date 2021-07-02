@@ -89,21 +89,33 @@ def mid(inputstring):
         return ""
 
 def double_letters(string):
-    x = 1
-    for i in string:
-      try:
-       if i == string[x]:
-           return True
-       x += 1
-      except:
-       return False
-    return False
+ x = 1
+ for i in string:
+        try:
+            if i == string[x]:
+                return True
+                x += 1
+        except:
+            return False
 
 
+
+
+ '''exitprogram = False
+ while exitprogram == False:
+    selection(input("Select 1 to administer available goods, 2 to go to store, 3 to see what goods you purchased:"))'''
+
+
+def is_anagram(string1, string2):
+    uno= list(string1)
+    uno.sort()
+    dos= list(string2)
+    dos.sort()
+    if uno == dos:
+            return True
+    else:
+            return False
 
 
 if __name__ == '__main__':
- exitprogram = False
- while exitprogram == False:
-    selection(input("Select 1 to administer available goods, 2 to go to store, 3 to see what goods you purchased:"))
-
+    print(is_anagram("uno", "nou"))
