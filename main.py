@@ -116,6 +116,11 @@ def is_anagram(string1, string2):
     else:
             return False
 
+def largest_difference(list):
+    list.sort()
+    answer = list[-1]-list[0]
+    return answer
 
 if __name__ == '__main__':
-    print(is_anagram("uno", "nou"))
+    test = [-75, 5, 10, 15]
+    print(largest_difference(test))
