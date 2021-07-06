@@ -121,6 +121,35 @@ def largest_difference(list):
     answer = list[-1]-list[0]
     return answer
 
+def div_3(inte):
+    result = inte / 3
+    if result.is_integer():
+        return True
+    else:
+        return False
+
+def get_row_col(string):
+    Char = string[0]
+    number = string[1]
+    if Char == "A":
+        Char = 0
+    elif Char == "B":
+        Char = 1
+    elif Char == "C":
+        Char = 2
+    else:
+        print("wrong Char")
+    if number == "1":
+        number = 0
+    elif number == "2":
+        number = 1
+    elif number == "3":
+        number = 2
+    else:
+        print("wrong number")
+    tuple = (number, Char)
+    return tuple
+
+
 if __name__ == '__main__':
-    test = [-75, 5, 10, 15]
-    print(largest_difference(test))
+    print(get_row_col("B2"))
